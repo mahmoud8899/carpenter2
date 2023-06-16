@@ -1,0 +1,20 @@
+version: '3'
+services:
+   node-app:
+    container_name: carpenter-app
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "4000:4000"
+    environment:
+    - DOCKER_DEFAULT_PLATFORM=linux/amd64
+    - PORT=4000
+  #  nginx:
+  #   image: nginx:stable-alpine
+  #   ports:
+  #   - "80:80"
+  #   volumes:
+  #     - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+  #   depends_on:
+  #     - node-app
